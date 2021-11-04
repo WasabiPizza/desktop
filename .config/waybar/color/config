@@ -1,0 +1,46 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"output": "DP-1",
+	"width": "1920",
+	"height": "25",
+
+	"modules-left": ["sway/workspaces", "sway/window"],
+	"modules-center": [ ],
+	"modules-right": ["network", "pulseaudio", "clock", "custom/powermenu"],
+
+	"sway/workspaces": {"disable-scroll": true, "format": "{name}", "all-outputs": true},
+
+	"sway/window": {"format": "{}"},
+	
+	"clock": {"format": "{: %a %d %b       %H:%M}", "tooltip": "false", "locale": "C"},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right": "pavucontrol"
+	},
+	
+    "network": {
+    "interface": "enp0s20f0u6",
+    "format": "{ifname}",
+    "format-wifi": " {essid}",
+    "format-ethernet": " eth0",
+    "format-disconnected": "", //An empty format will hide the module.
+    "max-length": 50
+    },
+
+  "custom/powermenu":{ 
+     "format":"", 
+     "on-click": "swaynag -t warning -m 'Power Menu options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'reboot' -b 'Shutdown'  'poweroff'"
+     }
+}

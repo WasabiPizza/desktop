@@ -1,0 +1,107 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "output": "DP-1",
+  "width": "1920",
+  "height": "20",
+
+  "modules-left": [ "sway/workspaces", "sway/window" ],
+  "modules-center": [ ],
+  "modules-right": [
+    "memory",
+    "cpu",
+    "temperature#cpu",
+    "custom/gpu-usage",
+    "temperature#gpu",
+    "pulseaudio",
+    "network",
+    "clock",
+    "custom/powermenu"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{name}",
+    "all-outputs": true,
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": []
+      }
+  },
+
+  "sway/window": {
+    "format": "{}"
+  },
+
+  "clock": {
+    "format": "{:[%a %d %b - %H:%M]}",
+    "tooltip": "false",
+    "locale": "C"
+  },
+
+  "pulseaudio": {
+    "format": "vol {volume}%",
+    "format-muted": "MUTED",
+    "scroll-step": 5,
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "mem {percentage}%"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "cpu {usage}%"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "bat {capacity}%",
+  },
+	
+  "temperature#cpu": {
+    "interval": 5,
+    "format": "temp {temperatureC}°",
+    "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
+  },
+
+  "temperature#gpu": {
+    "interval": 5,
+    "format": "temp {temperatureC}°",
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input"
+  },
+    
+  "network": {
+    "interface": "enp0s20f0u6",
+    "format": "{ifname}",
+    "format-wifi": "wifi {essid}",
+    "format-ethernet": "eth WaiFai",
+    "format-disconnected": "", //An empty format will hide the module.
+    "max-length": 50
+  },
+
+  "custom/powermenu":{ 
+    "format":"", 
+    "on-click": "swaynag -t warning -m 'Power Menu options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'loginctl reboot' -b 'Shutdown'  'loginctl poweroff'"
+  },
+
+  "custom/gpu-usage": {
+    "exec": "cat /sys/class/hwmon/hwmon0/device/gpu_busy_percent",
+    "format": "gpu {}%",
+    "interval": 5
+  }
+
+}
