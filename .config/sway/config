@@ -175,6 +175,7 @@ for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
 for_window [title="Firefox — Sharing Indicator"] floating enable
 for_window [title="Firefox — Sharing Indicator"] nofocus
+for_window [app_id="Thunar" title="^Copying.*"] floating enable
 for_window [app_id="anki" title="Browse *"] floating enable
 
 include /etc/sway/config.d/*
