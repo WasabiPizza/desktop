@@ -8,6 +8,7 @@ PS1="\W > \[$(tput sgr0)\]"
 #PS1="ようこそ "
 
 shopt -s autocd
+bind 'set completion-ignore-case on'
 
 alias \
         vpi='sudo xbps-install' \
@@ -32,6 +33,7 @@ alias mini='TERM=xterm-256color ssh mini'
 alias server='TERM=xterm-256color ssh server'
 
 export PATH=$PATH:$HOME/.local/bin
+export SVDIR=$HOME/.local/sv
 export XBPS_DISTDIR=/home/nero/Git/void-packages/
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 

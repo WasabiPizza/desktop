@@ -161,21 +161,30 @@ xwayland disable
 #          before-sleep 'swaylock -f -i /home/nero/.local/lock.jpg'
 
 ### Default workspaces
-for_window [app_id="foot"] floating enable; move position cursor
-for_window [app_id="mpv"] floating enable
-#for_window [app_id="us.zoom.Zoom"] floating enable
-#for_window [app_id=".*"] floating enable
-assign [app_id="firefox"] workspace 5
-assign [app_id="chromium"] workspace 5
-#for_window [app_id="firefox"] floating disable
-#for_window [app_id="chromium"] floating disable
-#for_window [app_id="firefox"] border none
-for_window [app_id="chromium"] border none
-for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
-for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
-for_window [title="Firefox — Sharing Indicator"] floating enable
-for_window [title="Firefox — Sharing Indicator"] nofocus
-for_window [app_id="Thunar" title="^Copying.*"] floating enable
-for_window [app_id="anki" title="Browse *"] floating enable
+assign {
+  [app_id="firefox"]  5
+  [app_id="chromium"] 5
+  [app_id="org.telegram.desktop.desktop"] 2
+  [app_id="anki"] 2
+  [app_id="org.keepassxc.KeePassXC"] 4
+} 
+
+### Floating windows
+for_window {
+  #[app_id=".*"] floating enable
+  #[app_id="firefox"] floating disable
+  #[app_id="chromium"] floating disable
+  #[app_id="firefox"] border none
+  [app_id="foot"] floating enable; move position cursor
+  [app_id="mpv"] floating enable
+  [app_id="chromium"] border none
+  [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
+  [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
+  [title="Firefox — Sharing Indicator"] kill
+  [app_id="Thunar" title="^Copying.*"] floating enable
+  [app_id="Thunar" title="File Operation Progress"] floating enable
+  [app_id="anki" title="Browse *"] floating enable
+  [app_id="nextcloud"] floating enable
+}
 
 include /etc/sway/config.d/*
