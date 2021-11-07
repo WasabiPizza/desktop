@@ -115,9 +115,10 @@ mode "resize" {
 
 ### Gaps and borders
 default_border pixel 1
-gaps inner 0
+gaps inner 5
 gaps outer 0
-smart_gaps off
+smart_gaps on
+smart_borders no_gaps
 
 ### Borders theme          border   backgr.  text     indicator child_border
 set $primary #dedd9d
@@ -151,6 +152,7 @@ exec mako
 exec gammastep
 exec wl-paste -t text --watch clipman.sh
 xwayland disable
+exec swaylock -f -i /home/nero/.local/lock.jpg
 #exec nextcloud --background
 #exec gnome-keyring-daemon --start
 #exec ibus-daemon -dr
@@ -164,8 +166,6 @@ xwayland disable
 assign {
   [app_id="firefox"]  5
   [app_id="chromium"] 5
-  [app_id="org.telegram.desktop.desktop"] 2
-  [app_id="anki"] 2
   [app_id="org.keepassxc.KeePassXC"] 4
 } 
 
@@ -181,6 +181,7 @@ for_window {
   [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
   [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
   [title="Firefox — Sharing Indicator"] kill
+  [app_id="firefox" title="Library"] floating enable
   [app_id="Thunar" title="^Copying.*"] floating enable
   [app_id="Thunar" title="File Operation Progress"] floating enable
   [app_id="anki" title="Browse *"] floating enable
