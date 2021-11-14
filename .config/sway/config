@@ -166,7 +166,7 @@ exec swaylock -f -i /home/nero/.local/lock.jpg
 assign {
   [app_id="firefox"]  5
   [app_id="chromium"] 5
-  [app_id="org.keepassxc.KeePassXC"] 4
+  [app_id="org.telegram.desktop.desktop"] 2
 } 
 
 ### Floating windows
@@ -186,6 +186,7 @@ for_window {
   [app_id="Thunar" title="File Operation Progress"] floating enable
   [app_id="anki" title="Browse *"] floating enable
   [app_id="nextcloud"] floating enable
+  [app_id="org.keepassxc.KeePassXC" title="KeePassXC - Browser Access Request"] floating enable
 }
 
 include /etc/sway/config.d/*
