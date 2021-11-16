@@ -132,10 +132,10 @@ client.unfocused         $background $background #ffffff $background $background
 exec_always gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
 exec_always gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
-seat seat0 xcursor_theme "Adwaita"
 
 ### Custom shortcuts
 bindsym $mod+w exec firefox
+bindsym $mod+Shift+w exec chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
 bindsym Pause exec backlight.sh
 bindsym Print exec grim
 bindsym Shift+Print exec grim_selection
@@ -152,7 +152,7 @@ exec mako
 exec gammastep
 exec wl-paste -t text --watch clipman.sh
 xwayland disable
-exec swaylock -f -i /home/nero/.local/lock.jpg
+#exec swaylock -f -i /home/nero/.local/lock.jpg
 #exec nextcloud --background
 #exec gnome-keyring-daemon --start
 #exec ibus-daemon -dr
@@ -182,6 +182,8 @@ for_window {
   [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
   [title="Firefox — Sharing Indicator"] kill
   [app_id="firefox" title="Library"] floating enable
+  [app_id="firefox" title="Page Info*"] floating enable
+  [app_id="firefox" title="About Mozilla Firefox"] floating enable
   [app_id="Thunar" title="^Copying.*"] floating enable
   [app_id="Thunar" title="File Operation Progress"] floating enable
   [app_id="anki" title="Browse *"] floating enable
