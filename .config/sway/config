@@ -43,7 +43,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Power Menu options' -b 'Logout' 'swaymsg exit' - b 'Restart' 'systemctl reboot' -b 'Shutdown'  'systemctl poweroff'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Power Menu options' -b 'Logout' 'swaymsg exit' - b 'Restart' 'loginctl reboot' -b 'Shutdown'  'loginctl poweroff'
 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -173,9 +173,9 @@ for_window {
   #[app_id=".*"] floating enable
   [app_id="foot"] floating enable; move position cursor
   [app_id="mpv"] floating enable
-  [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
   [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
   [title="Firefox — Sharing Indicator"] kill
+  [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
   [app_id="firefox" title="Library"] floating enable
   [app_id="firefox" title="Page Info*"] floating enable
   [app_id="firefox" title="About Mozilla Firefox"] floating enable
