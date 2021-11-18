@@ -132,6 +132,7 @@ client.unfocused         $background $background #ffffff $background $background
 exec_always gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
 exec_always gsettings set org.gnome.desktop.interface icon-theme "Adwaita"
 exec_always gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
+seat seat0 xcursor_theme "Adwaita"
 
 ### Custom shortcuts
 bindsym $mod+w exec firefox
@@ -148,13 +149,11 @@ exec dbus-update-activation-environment DISPLAY XAUTHORITY SWAYSOCK I3SOCK WAYLA
 exec pipewire
 exec pipewire-pulse
 exec waybar
-exec mako
 exec gammastep
 exec wl-paste -t text --watch clipman.sh
 xwayland disable
 #exec swaylock -f -i /home/nero/.local/lock.jpg
 #exec nextcloud --background
-#exec gnome-keyring-daemon --start
 #exec ibus-daemon -dr
 #exec fcitx5 -d
 #exec swayidle -w \
@@ -172,12 +171,8 @@ assign {
 ### Floating windows
 for_window {
   #[app_id=".*"] floating enable
-  #[app_id="firefox"] floating disable
-  #[app_id="chromium"] floating disable
-  #[app_id="firefox"] border none
   [app_id="foot"] floating enable; move position cursor
   [app_id="mpv"] floating enable
-  [app_id="chromium"] border none
   [app_id="firefox" title="Picture-in-Picture"] floating enable, resize set width 600 px height 300 px, move position 830 px 565 px, sticky enable
   [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 1200 height 750
   [title="Firefox — Sharing Indicator"] kill
