@@ -5,7 +5,7 @@ set $down j
 set $up k
 set $right l
 set $term foot
-set $menu bemenu-run -i -p ">" -H 23 --fn "Iosevka Term 11" --nf "#666666" --nb "#141414" --sb "#141414" --sf "#ffffff" --tf "#af9dde" --hf "#ffffff" | xargs swaymsg exec --
+set $menu bemenu-run -i -p ">" | xargs swaymsg exec --
 
 ### Output
 output * bg /home/nero/.local/wall.jpg fill
@@ -140,8 +140,8 @@ bindsym $mod+Shift+w exec chromium --enable-features=UseOzonePlatform --ozone-pl
 bindsym Pause exec backlight.sh
 bindsym Print exec grim
 bindsym Shift+Print exec grim_selection
-bindsym $mod+c exec clipman pick -t bemenu -T' -i  -H 23 --fn "Iosevka Term 11" --nf "#666666" --nb "#141414" --sb    "#141414" --sf "#ffffff" --tf "#af9dde" --hf "#ffffff"'
-bindsym $mod+Shift+c exec clipman clear -t bemenu -T' -i  -H 23 --fn "Iosevka Term 11" --nf "#666666" --nb "#141414" --sb    "#141414" --sf "#ffffff" --tf "#af9dde" --hf "#ffffff"'
+bindsym $mod+c exec clipman pick -t bemenu
+bindsym $mod+Shift+c exec clipman clear -t bemenu
 #bindsym $mod+i exec sh -c 'if [ "$(ibus engine)" = "anthy" ]; then ibus engine xkb:us:alt-intl:eng; else ibus engine anthy; fi'
 
 ### Autostart

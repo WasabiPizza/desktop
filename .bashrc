@@ -34,7 +34,7 @@ alias server='TERM=xterm-256color ssh server'
 
 export PATH=$PATH:$HOME/.local/bin
 export SVDIR=$HOME/.local/sv
-export XBPS_DISTDIR=/home/nero/Git/void-packages/
+export XBPS_DISTDIR=$HOME/Git/void-packages/
 export SSH_AUTH_SOCK=$HOME/.ssh/ssh-agent.sock
 
 export EDITOR='vim'
@@ -46,6 +46,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_QPA_PLATFORM=wayland-egl
 export MOZ_ENABLE_WAYLAND=1
 export ANKI_WAYLAND=1
+
+export BEMENU_OPTS='-H 23 --fn "Iosevka Term 11" --nf "#666666" --nb "#141414" --sb "#141414" --sf "#ffffff" --tf "#af9dde" --hf "#ffffff"'
 
 export NNN_TRASH=1
 #export NNN_RCLONE=''
