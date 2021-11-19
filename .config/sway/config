@@ -138,8 +138,8 @@ seat seat0 xcursor_theme "Adwaita"
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
 bindsym Pause exec backlight.sh
-bindsym Print exec grim
-bindsym Shift+Print exec grim_selection
+bindsym Print exec grim.sh
+bindsym Shift+Print exec grim_selection.sh
 bindsym $mod+c exec clipman pick -t bemenu
 bindsym $mod+Shift+c exec clipman clear -t bemenu
 #bindsym $mod+i exec sh -c 'if [ "$(ibus engine)" = "anthy" ]; then ibus engine xkb:us:alt-intl:eng; else ibus engine anthy; fi'
