@@ -151,6 +151,7 @@ exec pipewire-pulse
 exec waybar
 exec gammastep
 exec wl-paste -t text --watch clipman.sh
+exec autotiling
 xwayland disable
 #exec swaylock -f -i /home/nero/.local/lock.jpg
 #exec nextcloud --background
