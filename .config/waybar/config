@@ -88,7 +88,7 @@
     "interface": "enp0s20f0u6",
     "format": "{ifname}",
     "format-wifi": "wifi {essid}",
-    "format-ethernet": "eth WaiFai",
+    "format-ethernet": "eth enp0",
     "format-disconnected": "", //An empty format will hide the module.
     "max-length": 50
   },

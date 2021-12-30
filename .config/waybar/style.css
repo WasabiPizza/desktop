@@ -1,7 +1,6 @@
 * {
     border: none;
     border-radius: 0;
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: Iosevka Term, FontAwesome5FreeSolid;
     font-size: 13px;
     min-height: 0;
